@@ -1,7 +1,10 @@
-# Buggy Go program
+# Usage
 
-`docker build -t buddy-go:local .`
+```
+docker build -t bugg-go:local .
+docker run --rm -p 8080:8080 --name bugg-go -it bugg-go:local
+curl 'http://localhost:8080/hello'
+```
 
-`docker run --rm --volume /usr/share/zoneinfo:/usr/share/zoneinfo:ro -p 8080:8080 -it buddy-go:local `
+Why this does not work?
 
-`ab -n 30000 -c 30 'http://localhost:8080/hello'`
